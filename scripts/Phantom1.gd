@@ -25,3 +25,6 @@ func makepath():
 
 func _on_path_refresh_timeout(): 
 	makepath()
+
+func _on_bullet_area_area_entered(area):
+	queue_free()

@@ -11,7 +11,8 @@
 			"uuid": "bac37bd8-4851-4391-8a76-5dbfb1778dd6",
 			"title": "Todo",
 			"tasks": [
-				"c798b2e6-f033-44b6-98e2-7802e80c1067"
+				"c798b2e6-f033-44b6-98e2-7802e80c1067",
+				"ec7ce85e-3ab6-4730-ae00-3696b4e7c933"
 			]
 		},
 		{
@@ -29,6 +30,13 @@
 		{
 			"uuid": "c798b2e6-f033-44b6-98e2-7802e80c1067",
 			"title": "Layer 4 pour les dots",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "ec7ce85e-3ab6-4730-ae00-3696b4e7c933",
+			"title": "Layer 8 pour les balles",
 			"description": "",
 			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
 			"steps": []

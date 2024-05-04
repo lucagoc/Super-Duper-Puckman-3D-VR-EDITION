@@ -13,7 +13,21 @@ func _ready():
 		get_viewport().use_xr = true
 	else:
 		print("OpenXR not initialised, error")
+	
+	BusEvent.scoreTotal.connect(_on_score_changed)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func _on_score_changed(score: int):
+	$MusicPlayer.pitch_scale = 1 + score/4000.0
+	print($MusicPlayer.pitch_scale)
+
+func _on_music_player_finished():
+	var music = load("res://assets/musics/main_loop.wav")
+	$MusicPlayer.stream = music
+	$MusicPlayer.play()
+	
+	

@@ -14,10 +14,8 @@ func _process(delta):
 	var fps = Engine.get_frames_per_second()
 	var FPStext = "FPS :" + str(fps)
 	$FPS.text = FPStext
-	
-	
-	
 
 func _score_refresh(scoreAdd: int):
 	score += scoreAdd
+	BusEvent.scoreTotal.emit(score)
 	$Score.text = "Score :" + str(score)

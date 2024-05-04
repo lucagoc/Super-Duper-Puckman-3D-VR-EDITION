@@ -1,7 +1,9 @@
 extends Node
 
 signal cameraPosition
+signal XRcameraPosition
 signal scoreAdd
+signal scoreTotal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

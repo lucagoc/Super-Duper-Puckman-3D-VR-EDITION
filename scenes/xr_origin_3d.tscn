@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://c03c6x3b1ianl"]
+[gd_scene load_steps=16 format=3 uid="uid://c03c6x3b1ianl"]
 
+[ext_resource type="Script" path="res://scripts/XRCamera3D.gd" id="1_68puu"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_j71gh"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_1d7qj"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="2_irkoe"]
@@ -10,8 +11,8 @@
 [ext_resource type="Script" path="res://scripts/LeftHand.gd" id="5_fnkfi"]
 [ext_resource type="PackedScene" uid="uid://k7rnbeuilraf" path="res://scenes/RightHandHUD.tscn" id="6_4n2vg"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_ic0ia"]
-[ext_resource type="PackedScene" uid="uid://dk1j1qltniad6" path="res://scenes/sub_viewport_container.tscn" id="8_y5fwp"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/overrides/ground_physics_settings.gd" id="9_xcw7e"]
+[ext_resource type="PackedScene" uid="uid://dk1j1qltniad6" path="res://scenes/UpperViewport.tscn" id="10_uyo6l"]
 
 [sub_resource type="Resource" id="Resource_c14ht"]
 script = ExtResource("9_xcw7e")
@@ -26,11 +27,13 @@ bounciness = 0.0
 bounce_threshold = 1.0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g34dp"]
+radius = 0.6
 height = 1.5
 
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+script = ExtResource("1_68puu")
 
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
@@ -72,7 +75,7 @@ transform = Transform3D(0.012941, 0.0354505, -0.0926056, -0.0224144, -0.0899278,
 transform = Transform3D(1, 0, 1.2666e-07, -8.9407e-08, 1, -1.03377e-07, 3.72529e-09, 1.30385e-08, 0.999999, -0.850336, -1.10938, 0.105319)
 screen_size = Vector2(2, 2)
 collision_layer = 5242880
-scene = ExtResource("8_y5fwp")
+scene = ExtResource("10_uyo6l")
 viewport_size = Vector2(500, 500)
 throttle_fps = 60.0
 

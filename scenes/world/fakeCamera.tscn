@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt2p4egte8c78"]
+
+[ext_resource type="Script" path="res://scripts/fakeCamera.gd" id="1_nxjl6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ude4"]
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="SubViewportContainer" type="SubViewportContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
+script = ExtResource("1_nxjl6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.075775)
+mesh = SubResource("BoxMesh_0ude4")

@@ -1,0 +1,59 @@
+[gd_scene load_steps=14 format=3 uid="uid://cpe7ya4havl45"]
+
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_iagy2"]
+[ext_resource type="ArrayMesh" uid="uid://vw3x0dqpwn3i" path="res://assets/meshes/gun.obj" id="2_syvx7"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="3_3sb28"]
+[ext_resource type="Animation" uid="uid://bi1l6lre2w2lp" path="res://addons/godot-xr-tools/hands/animations/left/Hold.res" id="4_tmrqc"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_n0w6c"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_d3sn7"]
+[ext_resource type="Animation" uid="uid://bv5tuc1kjv0k5" path="res://addons/godot-xr-tools/hands/animations/right/Hold.res" id="7_qcb3k"]
+[ext_resource type="AudioStream" uid="uid://263h3k4xtcu3" path="res://assets/sounds/shoot.mp3" id="8_mmwad"]
+[ext_resource type="Script" path="res://scripts/Shoot.gd" id="9_8iue7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbocs"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="Resource" id="Resource_0ojuv"]
+script = ExtResource("5_n0w6c")
+closed_pose = ExtResource("4_tmrqc")
+
+[sub_resource type="Resource" id="Resource_o8c7n"]
+script = ExtResource("5_n0w6c")
+closed_pose = ExtResource("7_qcb3k")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axffm"]
+size = Vector3(0.34729, 1.31049, 1.91919)
+
+[node name="XRToolsPickable" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_iagy2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.012, 0, 0, 0, 0.012, 0, 0, 0, 0.012, 0.135704, -0.106847, -0.0187078)
+mesh = ExtResource("2_syvx7")
+surface_material_override/0 = SubResource("StandardMaterial3D_vbocs")
+
+[node name="XRToolsGrabPointHand" type="Marker3D" parent="."]
+transform = Transform3D(0.998027, -0.0627905, 0, 0.0603278, 0.958883, -0.277315, 0.0174127, 0.276767, 0.960779, -0.00362838, 0, 0.0218008)
+visible = false
+script = ExtResource("3_3sb28")
+hand_pose = SubResource("Resource_0ojuv")
+
+[node name="GrabPointHandRight" parent="." instance=ExtResource("6_d3sn7")]
+transform = Transform3D(1, 0, 0, 0, 0.958909, -0.283714, 0, 0.283714, 0.958909, -0.00729071, 0, 0.0189333)
+hand_pose = SubResource("Resource_o8c7n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.00206909, -0.0405121, 0.0295044)
+shape = SubResource("BoxShape3D_axffm")
+
+[node name="Shoot" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_mmwad")
+pitch_scale = 4.0
+script = ExtResource("9_8iue7")
+
+[connection signal="finished" from="Shoot" to="Shoot" method="_on_finished"]

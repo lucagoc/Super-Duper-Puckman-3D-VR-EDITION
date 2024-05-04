@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqfrxqu41hgaa"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_jf5ks"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bs8s7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1owj"]
+
+[node name="Bullet" type="RigidBody3D"]
+script = ExtResource("1_jf5ks")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+mesh = SubResource("BoxMesh_bs8s7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+shape = SubResource("BoxShape3D_x1owj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Detection" type="Area3D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detection"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+shape = SubResource("BoxShape3D_x1owj")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
