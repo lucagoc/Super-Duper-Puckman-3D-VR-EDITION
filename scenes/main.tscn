@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnsn6vfo3vh8f"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_x03at"]
+[ext_resource type="PackedScene" uid="uid://c03c6x3b1ianl" path="res://scenes/xr_origin_3d.tscn" id="2_4ueiu"]
+[ext_resource type="Texture2D" uid="uid://cnu77f8pvqfr0" path="res://assets/kloppenheim_06_puresky_4k.hdr" id="3_qq7cm"]
+[ext_resource type="PackedScene" uid="uid://cu64fcfjoylxi" path="res://scenes/world/level.tscn" id="4_ypliw"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4svtn"]
+panorama = ExtResource("3_qq7cm")
+
+[sub_resource type="Sky" id="Sky_rcm6a"]
+sky_material = SubResource("PanoramaSkyMaterial_4svtn")
+
+[sub_resource type="Environment" id="Environment_4so7i"]
+background_mode = 2
+sky = SubResource("Sky_rcm6a")
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_x03at")
+
+[node name="XROrigin3D" parent="." instance=ExtResource("2_4ueiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51974, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4so7i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.799475, 0.600699, 0, -0.600699, 0.799475, 0, 3.99292, 0)
+
+[node name="Level" parent="." instance=ExtResource("4_ypliw")]

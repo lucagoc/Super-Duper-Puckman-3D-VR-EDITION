@@ -1,0 +1,50 @@
+{
+	"categories": [
+		{
+			"uuid": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "bac37bd8-4851-4391-8a76-5dbfb1778dd6",
+			"title": "Todo",
+			"tasks": [
+				"c798b2e6-f033-44b6-98e2-7802e80c1067"
+			]
+		},
+		{
+			"uuid": "17f7be4e-f898-4199-bd4a-565589a4cc89",
+			"title": "Doing",
+			"tasks": []
+		},
+		{
+			"uuid": "558ec0eb-895a-42a9-9cb3-1968561c7d85",
+			"title": "Done",
+			"tasks": []
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "c798b2e6-f033-44b6-98e2-7802e80c1067",
+			"title": "Layer 4 pour les dots",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"bac37bd8-4851-4391-8a76-5dbfb1778dd6"
+			],
+			[
+				"17f7be4e-f898-4199-bd4a-565589a4cc89"
+			],
+			[
+				"558ec0eb-895a-42a9-9cb3-1968561c7d85"
+			]
+		]
+	}
+}
