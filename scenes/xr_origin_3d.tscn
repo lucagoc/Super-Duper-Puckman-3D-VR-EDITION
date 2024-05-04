@@ -60,6 +60,7 @@ script = ExtResource("5_fnkfi")
 [node name="LeftHand" parent="LeftHand" instance=ExtResource("1_j71gh")]
 
 [node name="MovementDirect" parent="LeftHand" instance=ExtResource("3_teaid")]
+max_speed = 5.0
 strafe = true
 
 [node name="FunctionPickup" parent="LeftHand" instance=ExtResource("3_r3m1f")]

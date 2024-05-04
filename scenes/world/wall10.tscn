@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3psixwgxtsht"]
+[gd_scene load_steps=7 format=3 uid="uid://c3psixwgxtsht"]
+
+[ext_resource type="ArrayOccluder3D" uid="uid://bt7uqto0d8nx1" path="res://occ/wall10.occ" id="1_4yip0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wj5xb"]
 albedo_color = Color(0, 0, 0, 1)
@@ -32,3 +34,6 @@ mesh = SubResource("BoxMesh_7ayha")
 [node name="BottomStyle2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.91, 0)
 mesh = SubResource("BoxMesh_7ayha")
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+occluder = ExtResource("1_4yip0")
