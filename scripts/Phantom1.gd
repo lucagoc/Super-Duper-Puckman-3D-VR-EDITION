@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
-const speed = 4
-const accel = 10
+@export var speed = 4
+@export var accel = 10
+@export var isDead = false
+
 var target = Vector3(0, 0, 0)
 
 @onready var nav_agent := $NavigationAgent3D as NavigationAgent3D
@@ -18,7 +20,12 @@ func _process(delta):
 	move_and_slide()
 
 func _refresh_target(targetPos: Vector3):
-	target = targetPos
+	if(not isDead):
+		#print("pasmort")
+		target = targetPos
+	else:
+		#print("mort")
+		target = Vector3(0, 1, -19)
 
 func makepath():
 	nav_agent.target_position = target
@@ -27,4 +34,4 @@ func _on_path_refresh_timeout():
 	makepath()
 
 func _on_bullet_area_area_entered(area):
-	queue_free()
+	isDead = true

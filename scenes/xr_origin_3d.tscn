@@ -80,6 +80,7 @@ viewport_size = Vector2(500, 500)
 throttle_fps = 60.0
 
 [node name="PlayerBody" parent="." instance=ExtResource("4_jseup")]
+collision_mask = 1019
 physics = SubResource("Resource_c14ht")
 
 [node name="Area3D" type="Area3D" parent="PlayerBody"]
