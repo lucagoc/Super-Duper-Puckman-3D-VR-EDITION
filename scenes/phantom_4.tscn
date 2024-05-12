@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl4so75gprji0"]
+[gd_scene load_steps=11 format=3 uid="uid://d3lldehwa0j52"]
 
-[ext_resource type="Script" path="res://scripts/Phantom1.gd" id="1_xh747"]
-[ext_resource type="AudioStream" uid="uid://4ufllvh2oe4l" path="res://assets/sounds/ghost.wav" id="2_1whjq"]
+[ext_resource type="Script" path="res://scripts/Phantom1.gd" id="1_4affu"]
+[ext_resource type="AudioStream" uid="uid://4ufllvh2oe4l" path="res://assets/sounds/ghost.wav" id="2_7667d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oxn2m"]
 radius = 0.113785
@@ -14,11 +14,11 @@ material = SubResource("StandardMaterial3D_1s7ar")
 radius = 0.1
 height = 0.05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22ed8"]
-albedo_color = Color(0.791913, 0.165368, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lfso"]
+albedo_color = Color(0.89067, 0.220719, 0.708976, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_enlwt"]
-material = SubResource("StandardMaterial3D_22ed8")
+material = SubResource("StandardMaterial3D_2lfso")
 height = 1.5
 is_hemisphere = true
 
@@ -30,12 +30,12 @@ height = 1.5909
 height = 6.25469
 radius = 5.23866
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wmyw4"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sd70m"]
 
-[node name="Phantom1" type="CharacterBody3D"]
+[node name="Phantom2" type="CharacterBody3D"]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("1_xh747")
+script = ExtResource("1_4affu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_oxn2m")
@@ -70,7 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.228582, 0)
 shape = SubResource("CapsuleShape3D_kqcun")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_1whjq")
+stream = ExtResource("2_7667d")
 autoplay = true
 max_distance = 10.0
 doppler_tracking = 2
@@ -83,7 +83,7 @@ collision_mask = 32
 shape = SubResource("CylinderShape3D_33h3d")
 
 [node name="Delay" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 
@@ -92,7 +92,7 @@ collision_layer = 16384
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDeathArea"]
-shape = SubResource("CapsuleShape3D_wmyw4")
+shape = SubResource("CapsuleShape3D_sd70m")
 
 [connection signal="navigation_finished" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_navigation_finished"]
 [connection signal="timeout" from="pathRefresh" to="." method="_on_path_refresh_timeout"]

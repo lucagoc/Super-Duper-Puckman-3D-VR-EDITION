@@ -11,19 +11,33 @@
 			"uuid": "bac37bd8-4851-4391-8a76-5dbfb1778dd6",
 			"title": "Todo",
 			"tasks": [
-				"c798b2e6-f033-44b6-98e2-7802e80c1067",
-				"ec7ce85e-3ab6-4730-ae00-3696b4e7c933"
+				"3d892a4d-cf2e-44b1-b1b5-e785c6130b5c",
+				"03c53093-5a8f-4ca0-8f1b-399d8cb9ca22",
+				"5748439e-ddf1-475f-b215-322a924ff936",
+				"b8d43a12-e4ba-4558-9b6a-f3798bb60d48",
+				"ebbecdb2-5fa3-4f5f-89c6-a4ba6920c440"
 			]
 		},
 		{
 			"uuid": "17f7be4e-f898-4199-bd4a-565589a4cc89",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"14377ea3-1a91-46ac-a2b4-b0fa8bb4aa1a"
+			]
 		},
 		{
 			"uuid": "558ec0eb-895a-42a9-9cb3-1968561c7d85",
 			"title": "Done",
-			"tasks": []
+			"tasks": [
+				"5d8d9301-7680-439a-b96e-c224a253ac1d",
+				"c798b2e6-f033-44b6-98e2-7802e80c1067",
+				"ec7ce85e-3ab6-4730-ae00-3696b4e7c933",
+				"dcaa2900-fc89-4375-8a29-4e9da3f46263",
+				"6397f083-57a3-4caf-86eb-7f13c9b527e1",
+				"aaf0ef95-d1a5-4266-a81d-b4afb2b917da",
+				"44aa2f93-22ed-4277-b106-1baba371971e",
+				"a8b860c6-42eb-4e7d-aae7-5d3feec4b579"
+			]
 		}
 	],
 	"tasks": [
@@ -37,6 +51,90 @@
 		{
 			"uuid": "ec7ce85e-3ab6-4730-ae00-3696b4e7c933",
 			"title": "Layer 8 pour les balles",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "dcaa2900-fc89-4375-8a29-4e9da3f46263",
+			"title": "Layer 6 Player Detection par phantom",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "6397f083-57a3-4caf-86eb-7f13c9b527e1",
+			"title": "Faire une vrai fin",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "44aa2f93-22ed-4277-b106-1baba371971e",
+			"title": "Affichage du nombre de munition restante",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "a8b860c6-42eb-4e7d-aae7-5d3feec4b579",
+			"title": "Quand il ne reste plus que 10 dots, Afficher le chemin vers le dots le plus proche",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "5d8d9301-7680-439a-b96e-c224a253ac1d",
+			"title": "3 nouveaux fantom*",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "3d892a4d-cf2e-44b1-b1b5-e785c6130b5c",
+			"title": "Logo",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "03c53093-5a8f-4ca0-8f1b-399d8cb9ca22",
+			"title": "Bannière + Nom",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "5748439e-ddf1-475f-b215-322a924ff936",
+			"title": "écran titre",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "b8d43a12-e4ba-4558-9b6a-f3798bb60d48",
+			"title": "Crédit",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "ebbecdb2-5fa3-4f5f-89c6-a4ba6920c440",
+			"title": "Objet dédoublement",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "14377ea3-1a91-46ac-a2b4-b0fa8bb4aa1a",
+			"title": "Téléportation des portails",
+			"description": "",
+			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
+			"steps": []
+		},
+		{
+			"uuid": "aaf0ef95-d1a5-4266-a81d-b4afb2b917da",
+			"title": "Layer 13 gun et phantom",
 			"description": "",
 			"category": "5a9e3b10-c09e-44d9-8a8e-a28878934aa6",
 			"steps": []

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://7x6w0oi6qlkq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bb5p5"]
+albedo_color = Color(0.549901, 0.37209, 0.476221, 1)
+emission_enabled = true
+emission = Color(0, 0.819608, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_uobcq"]
+material = SubResource("StandardMaterial3D_bb5p5")
+text = "SUPER DUPER"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0tsl"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yxh3b"]
+material = SubResource("StandardMaterial3D_v0tsl")
+size = Vector3(10, 10, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px6db"]
+albedo_color = Color(0.999999, 0.989401, 0.448549, 1)
+emission_enabled = true
+emission = Color(0.452679, 0.382787, 1.92523e-07, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="TextMesh" id="TextMesh_1pg6v"]
+material = SubResource("StandardMaterial3D_px6db")
+text = "PUCKMAN !!!"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvruj"]
+albedo_color = Color(0, 0.988235, 0.447059, 1)
+emission_enabled = true
+emission = Color(2.64719e-07, 0.456829, 0.33319, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="TextMesh" id="TextMesh_8e0sp"]
+material = SubResource("StandardMaterial3D_rvruj")
+text = "EDITION"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfpnr"]
+albedo_color = Color(1, 0, 0.447059, 1)
+emission_enabled = true
+emission = Color(0.64178, 0.000185688, 0.601944, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="TextMesh" id="TextMesh_ko5mf"]
+material = SubResource("StandardMaterial3D_vfpnr")
+text = "VIRTUAL REALITY"
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997669, 0.0682284, 0.00143131, -0.0682135, 0.997633, -0.0086839, -0.00202038, 0.00856603, 0.999961, 1.36485, 2.60628, -1.13039)
+mesh = SubResource("TextMesh_uobcq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0395106, 0.00727201, -1.56039)
+mesh = SubResource("BoxMesh_yxh3b")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.968086, 0, -0.250617, 0, 1, 0, 0.250617, 0, 0.968086, 1.58629, 2.41631, -1.0572)
+mesh = SubResource("TextMesh_1pg6v")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.991754, 0, -0.128155, 0.0483829, 0.925996, 0.374421, 0.118671, -0.377534, 0.91836, 1.58629, 2.04613, -1.04049)
+mesh = SubResource("TextMesh_8e0sp")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999772, 0, -0.0213612, 0.00963262, 0.892554, 0.450837, 0.019066, -0.45094, 0.892351, 1.33905, 2.24791, -1.0572)
+mesh = SubResource("TextMesh_ko5mf")
+skeleton = NodePath("../MeshInstance3D")

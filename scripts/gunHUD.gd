@@ -1,17 +1,13 @@
-extends Node
+extends Control
 
-signal cameraPosition
-signal XRcameraPosition
-signal scoreAdd
-signal scoreTotal
-signal theEnd
-signal nextDotPos
+@export var ammo = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	ammo = get_parent().get_parent().get_parent().get_node("Shoot").ammoleft
+	$Label.text = str(ammo)

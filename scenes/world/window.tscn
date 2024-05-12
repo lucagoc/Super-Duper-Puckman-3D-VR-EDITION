@@ -7,7 +7,9 @@ metallic = 1.0
 roughness = 0.07
 
 [sub_resource type="BoxMesh" id="BoxMesh_48odr"]
+lightmap_size_hint = Vector2i(24, 43)
 material = SubResource("StandardMaterial3D_d8fdl")
+add_uv2 = true
 size = Vector3(3.5, 2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_syemk"]

@@ -23,3 +23,15 @@ offset_top = 20.0
 offset_right = 40.0
 offset_bottom = 43.0
 text = "FPS DEBUG"
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 0
+offset_top = 38.0
+offset_right = 116.0
+offset_bottom = 61.0
+text = "TIMER : DEBUG"
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

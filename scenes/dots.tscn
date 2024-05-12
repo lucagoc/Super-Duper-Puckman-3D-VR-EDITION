@@ -7,6 +7,7 @@
 radius = 0.4
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hepfo"]
+albedo_color = Color(0.874546, 0.80552, 0.357375, 1)
 roughness = 0.35
 
 [sub_resource type="SphereMesh" id="SphereMesh_fb6wp"]

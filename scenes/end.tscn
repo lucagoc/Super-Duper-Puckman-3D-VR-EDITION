@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqaufcysvuxng"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6r0e"]
+transparency = 1
+albedo_color = Color(2.26215e-06, 0, 0.646836, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_idqb3"]
+material = SubResource("StandardMaterial3D_w6r0e")
+size = Vector3(50, 0.2, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pv301"]
+size = Vector3(50, 0.2, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rcucj"]
+roughness = 0.0
+
+[sub_resource type="TextMesh" id="TextMesh_krlou"]
+material = SubResource("StandardMaterial3D_rcucj")
+text = "THE END
+YOU WIN !"
+font_size = 40
+
+[sub_resource type="Animation" id="Animation_ts3cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ttbvr"]
+resource_name = "new_animation"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.561996, 0), Vector3(0, -0.561996, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1k4y8"]
+_data = {
+"RESET": SubResource("Animation_ts3cj"),
+"new_animation": SubResource("Animation_ttbvr")
+}
+
+[node name="endPlateform" type="Node3D"]
+
+[node name="Plateform" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plateform"]
+transparency = 0.61
+mesh = SubResource("BoxMesh_idqb3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plateform"]
+shape = SubResource("BoxShape3D_pv301")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.867495, -1.52923)
+mesh = SubResource("TextMesh_krlou")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MeshInstance3D")
+libraries = {
+"": SubResource("AnimationLibrary_1k4y8")
+}

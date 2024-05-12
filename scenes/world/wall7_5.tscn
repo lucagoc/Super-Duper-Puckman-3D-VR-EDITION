@@ -6,7 +6,9 @@
 albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ejba0"]
+lightmap_size_hint = Vector2i(44, 63)
 material = SubResource("StandardMaterial3D_wj5xb")
+add_uv2 = true
 size = Vector3(7.5, 2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_m1fef"]
@@ -16,11 +18,15 @@ size = Vector3(7.5, 2, 0.5)
 albedo_color = Color(0, 0.432265, 0.932785, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4ovlq"]
+lightmap_size_hint = Vector2i(45, 47)
 material = SubResource("StandardMaterial3D_48c2u")
+add_uv2 = true
 size = Vector3(7.6, 0.4, 0.6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b14hh"]
+lightmap_size_hint = Vector2i(45, 47)
 material = SubResource("StandardMaterial3D_48c2u")
+add_uv2 = true
 size = Vector3(7.6, 0.4, 0.6)
 
 [node name="Wall1" type="StaticBody3D"]
